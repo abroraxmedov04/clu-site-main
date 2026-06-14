@@ -1,0 +1,37 @@
+.page {
+	@include page;
+	padding-top: 80px;
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-3xl;
+}
+
+.section {
+	margin-top: 0;
+	background: $color-bg-section;
+	border-radius: $radius-2xl;
+	padding: fluid(20px, 50px);
+}
+
+.sectionTitle {
+	@include section-title;
+	margin-bottom: $spacing-xl;
+}
+
+.cardsGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: $spacing-lg;
+
+	@include desktop {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+
+	> * {
+		height: 100%;
+	}
+}

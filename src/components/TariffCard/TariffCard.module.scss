@@ -1,0 +1,107 @@
+.card {
+	background: $color-bg-card-dark;
+	border-radius: $radius-2xl;
+	padding: fluid(10px, 15px);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	height: 100%;
+}
+
+.name {
+	font-size: fluid(34px, 62px);
+	font-weight: $font-weight-regular;
+	position: relative;
+	z-index: 1;
+}
+
+.content {
+	display: flex;
+	height: fluid(232px, 377px);
+	border-radius: $radius-lg;
+	padding: fluid(15px, 20px);
+	background: $color-bg-content;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: calc(fluid(89px, 145px) * -1 / 2);
+		left: 0;
+		right: 0;
+		height: fluid(89px, 145px);
+		border-radius: 539px;
+		background: #008cff;
+		filter: blur(115px);
+		pointer-events: none;
+		opacity: 0;
+		transform: translateY(30px);
+		animation: glowFadeIn 1s ease forwards;
+		animation-delay: 0.3s;
+	}
+
+	@keyframes glowFadeIn {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+.priceRow {
+	display: flex;
+	align-items: flex-end;
+	gap: $spacing-xs;
+	margin-top: auto;
+	position: relative;
+	z-index: 1;
+}
+
+.price {
+	font-size: fluid(69px, 73px);
+	line-height: 1;
+	font-weight: $font-weight-regular;
+}
+
+.currency {
+	font-size: $font-size-2xl;
+}
+
+.arrow {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fluid(45px, 70px);
+	height: fluid(45px, 70px);
+	border-radius: 50%;
+	background: $color-bg-card-dark;
+	transition: background $transition-fast;
+	position: relative;
+	z-index: 1;
+
+	&:hover {
+		background: $color-primary;
+	}
+
+	@include mobile {
+		img {
+			width: 15px;
+			height: 15px;
+		}
+	}
+}
+
+.description {
+	font-size: fluid(15px, 23px);
+	color: $color-text-secondary;
+	line-height: 1;
+	position: relative;
+	z-index: 1;
+
+	strong {
+		color: $color-text;
+	}
+}

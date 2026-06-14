@@ -1,0 +1,166 @@
+.footer {
+	background: $color-bg-section;
+	border-radius: fluid(20px, 40px) fluid(20px, 40px) 0 0;
+	padding: fluid(32px, 56px) fluid(32px, 85px);
+	padding-right: fluid(32px, 64px);
+	margin-top: $spacing-3xl;
+	display: flex;
+	justify-content: space-between;
+
+	@include tablet {
+		flex-direction: column;
+		gap: $spacing-3xl;
+	}
+
+	@include mobile {
+		border-radius: 20px 20px 0 0;
+	}
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: fluid(280px, 560px);
+
+	@include tablet {
+		width: 100%;
+	}
+}
+
+.leftTop {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-xl;
+}
+
+.logo {
+	width: fluid(100px, 137px);
+	height: auto;
+}
+
+.description {
+	font-size: $font-size-md;
+	color: $color-text-dimmed;
+	line-height: 1.4;
+
+	@include mobile {
+		font-size: 14px;
+	}
+}
+
+.leftBottom {
+	display: flex;
+	align-items: flex-end;
+	gap: $spacing-lg;
+	margin-top: fluid(80px, 192px);
+
+	@include mobile {
+		justify-content: space-between;
+		margin-top: 32px;
+	}
+}
+
+.telegramIcon {
+	width: fluid(32px, 40px);
+	height: fluid(32px, 40px);
+}
+
+.copyright {
+	display: flex;
+	flex-direction: column;
+	font-size: $font-size-xs;
+	color: $color-text;
+	line-height: 1.4;
+
+	@include mobile {
+		font-size: 12px;
+	}
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: fluid(280px, 560px);
+
+	@include tablet {
+		width: 100%;
+	}
+}
+
+.nav {
+	display: flex;
+	gap: fluid(20px, 41px);
+
+	@include tablet {
+		flex-wrap: wrap;
+	}
+}
+
+.navLink {
+	font-size: $font-size-md;
+	color: $color-text-dimmed;
+	line-height: 1.4;
+	transition: color $transition-fast;
+
+	&:hover {
+		color: $color-text;
+	}
+
+	@include mobile {
+		font-size: 16px;
+	}
+}
+
+.sections {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-3xl;
+
+	@include mobile {
+		margin-top: 30px;
+	}
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
+
+	@include mobile {
+		gap: 16px;
+	}
+}
+
+.sectionList {
+	display: flex;
+	flex-direction: column;
+}
+
+.sectionTitle {
+	font-size: $font-size-xl;
+	font-weight: $font-weight-medium;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+
+	@include mobile {
+		font-size: 20px;
+	}
+}
+
+.sectionLink {
+	font-size: $font-size-sm;
+	width: fit-content;
+	color: $color-text-dimmed;
+	line-height: 1.6;
+	transition: color $transition-fast;
+
+	&:hover {
+		color: $color-text;
+	}
+
+	@include mobile {
+		font-size: 14px;
+	}
+}

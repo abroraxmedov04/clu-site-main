@@ -1,0 +1,59 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: $spacing-sm;
+	font-weight: $font-weight-medium;
+	letter-spacing: -0.03em;
+	transition:
+		background $transition-fast,
+		color $transition-fast;
+}
+
+.md {
+	padding: fluid(12px, 15px) fluid(32px, 75px);
+	font-size: fluid(15px, 19px);
+	border-radius: $radius-md;
+}
+
+.sm {
+	padding: $spacing-xs $spacing-md;
+	font-size: $font-size-xs;
+	border-radius: $radius-sm;
+}
+
+.primary {
+	background: $color-primary;
+	color: $color-text;
+
+	&:hover {
+		background: $color-primary-hover;
+	}
+}
+
+.outline {
+	border: 1px solid $color-border;
+	color: $color-text;
+
+	&:hover {
+		background: $color-bg-card-hover;
+	}
+}
+
+.dark {
+	background: #2d2d2d;
+	border: 1px solid #000000;
+	color: $color-text;
+	width: 227px;
+	height: fluid(50px, 59px);
+	padding: 0;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	&:hover {
+		background: $color-primary;
+		border-color: $color-primary;
+	}
+}

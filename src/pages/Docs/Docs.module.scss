@@ -1,0 +1,17 @@
+.page {
+	@include page;
+	padding-top: 100px;
+	min-height: 60vh;
+}
+
+.title {
+	font-size: $font-size-4xl;
+	font-weight: $font-weight-bold;
+	font-style: italic;
+}
+
+.placeholder {
+	margin-top: $spacing-md;
+	font-size: $font-size-base;
+	color: $color-text-secondary;
+}

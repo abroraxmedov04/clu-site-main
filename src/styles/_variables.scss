@@ -1,0 +1,77 @@
+$fluid-min-vw: 430;
+$fluid-max-vw: 1920;
+
+@function fluid($min, $max, $min-vw: $fluid-min-vw, $max-vw: $fluid-max-vw) {
+	$min-val: calc($min / 1px);
+	$max-val: calc($max / 1px);
+	$slope: calc(($max-val - $min-val) / ($max-vw - $min-vw));
+	$intercept: calc($min-val - $slope * $min-vw);
+
+	@return clamp(#{$min}, calc(#{$intercept}px + #{$slope * 100}vw), #{$max});
+}
+
+$color-bg: #0a0a0a;
+$color-bg-section: #0f0f0f;
+$color-bg-card: #141414;
+$color-bg-card-dark: #19191b;
+$color-bg-card-hover: #1a1a1a;
+$color-bg-content: #0e0e10;
+
+$color-primary: #008cff;
+$color-primary-hover: #0070cc;
+$color-accent-blue: #008cff;
+
+$color-text: #ffffff;
+$color-text-secondary: #888888;
+$color-text-muted: #555555;
+$color-text-dimmed: rgba(255, 255, 255, 0.4);
+$color-text-semi: rgba(255, 255, 255, 0.5);
+
+$color-border: #222222;
+
+$color-overlay-subtle: rgba(41, 41, 41, 1);
+$color-overlay-light: rgba(255, 255, 255, 0.1);
+
+$font-family:
+	'Aeonik Pro',
+	-apple-system,
+	BlinkMacSystemFont,
+	sans-serif;
+
+$font-size-xs: fluid(10px, 13px);
+$font-size-sm: fluid(11px, 14px);
+$font-size-base: fluid(12px, 15px);
+$font-size-md: fluid(13px, 16px);
+$font-size-lg: fluid(14px, 18px);
+$font-size-xl: fluid(15px, 20px);
+$font-size-2xl: fluid(18px, 23px);
+$font-size-4xl: fluid(22px, 28px);
+$font-size-hero: fluid(36px, 70px);
+$font-size-display: fluid(36px, 90px);
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$spacing-xs: fluid(4px, 10px);
+$spacing-sm: fluid(6px, 15px);
+$spacing-md: fluid(8px, 16px);
+$spacing-lg: fluid(10px, 20px);
+$spacing-xl: fluid(16px, 32px);
+$spacing-3xl: fluid(24px, 48px);
+
+$content-padding: fluid(16px, 30px);
+
+$radius-sm: fluid(6px, 8px);
+$radius-md: fluid(8px, 10px);
+$radius-lg: fluid(10px, 15px);
+$radius-xl: fluid(15px, 20px);
+$radius-2xl: fluid(15px, 20px);
+$radius-full: 9999px;
+
+$breakpoint-mobile: 430px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+$transition-fast: 150ms ease;
+$transition-accordion: 400ms cubic-bezier(0.4, 0, 0.2, 1);

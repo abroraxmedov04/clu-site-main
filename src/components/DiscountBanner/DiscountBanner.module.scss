@@ -1,0 +1,43 @@
+.banner {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	row-gap: 56px;
+}
+
+.title {
+	font-size: fluid(60px, 90px);
+	line-height: fluid(50px, 70px);
+	font-weight: $font-weight-medium;
+	letter-spacing: -0.03em;
+}
+
+.subtitle {
+	font-size: fluid(16px, 26px);
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.percent {
+	font-size: 195px;
+	font-weight: $font-weight-regular;
+	line-height: 1;
+	color: $color-accent-blue;
+	letter-spacing: -0.03em;
+
+	@media (max-width: 405px) {
+		font-size: fluid(146px, 195px, 320, 405);
+	}
+}
+
+.note {
+	font-size: 16px;
+	color: $color-accent-blue;
+	margin-top: $spacing-sm;
+	border-top: 1px solid $color-accent-blue;
+	padding-top: $spacing-xs;
+}

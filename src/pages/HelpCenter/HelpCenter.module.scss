@@ -1,0 +1,114 @@
+.page {
+	@include page;
+	padding-top: 80px;
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-3xl;
+}
+
+.section {
+	margin-top: 0;
+}
+
+.heading {
+	font-size: fluid(24px, 60px);
+	font-weight: $font-weight-regular;
+	color: $color-text-dimmed;
+	letter-spacing: -0.04em;
+	line-height: 30px;
+	margin-bottom: $spacing-xl;
+
+	@include mobile {
+		line-height: 20px;
+	}
+}
+
+.searchWrapper {
+	display: flex;
+	align-items: center;
+	background: $color-bg-section;
+	border-radius: fluid(15px, 20px);
+	padding: fluid(16px, 25px) fluid(24px, 50px);
+}
+
+.searchInput {
+	flex: 1;
+	font-size: fluid(16px, 24px);
+	letter-spacing: -0.04em;
+
+	&::placeholder {
+		color: $color-text-dimmed;
+	}
+}
+
+.searchBtn {
+	flex-shrink: 0;
+	transition: opacity $transition-fast;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.searchIcon {
+	width: fluid(20px, 30px);
+	height: fluid(20px, 30px);
+}
+
+.resultsSection {
+	background: $color-bg-section;
+	border-radius: $radius-2xl;
+	padding: fluid(30px, 50px);
+
+	@include mobile {
+		padding: 20px;
+	}
+}
+
+.resultsList {
+	display: flex;
+	flex-direction: column;
+	gap: fluid(10px, 15px);
+}
+
+.resultCard {
+	background: $color-bg-card-dark;
+	border-radius: fluid(15px, 20px);
+	padding: fluid(24px, 35px);
+	display: flex;
+	flex-direction: column;
+	gap: fluid(6px, 10px);
+
+	@include mobile {
+		padding: 20px;
+	}
+}
+
+.resultQuestion {
+	font-size: fluid(18px, 30px);
+	font-weight: $font-weight-regular;
+	letter-spacing: -0.04em;
+	line-height: 1;
+}
+
+.resultAnswer {
+	font-size: fluid(16px, 28px);
+	font-weight: $font-weight-regular;
+	color: rgba(255, 255, 255, 0.7);
+	letter-spacing: -0.04em;
+	line-height: 1.07;
+}
+
+.faqSection {
+	background: $color-bg-section;
+	border-radius: $radius-2xl;
+	padding: fluid(30px, 50px);
+}
+
+.loadingText,
+.emptyText {
+	font-size: fluid(16px, 24px);
+	color: $color-text-dimmed;
+	text-align: center;
+	padding: $spacing-xl 0;
+}

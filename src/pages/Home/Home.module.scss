@@ -1,0 +1,366 @@
+.page {
+	@include page;
+}
+
+.hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - fluid(60px, 80px) - $content-padding);
+	overflow: hidden;
+	border-radius: $radius-2xl;
+	margin-top: fluid(60px, 80px);
+
+	@include mobile {
+		align-items: flex-start;
+		padding-top: 100px;
+	}
+}
+
+.heroBg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+}
+
+.heroContent {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: $spacing-xl;
+	margin-top: -15%;
+}
+
+.heroLabel {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-family: $font-family;
+	font-size: 14px;
+	color: #919191;
+	border-radius: $radius-full;
+	padding: fluid(6px, 10px) fluid(14px, 24px);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.1) 0%,
+		rgba(153, 153, 153, 0.1) 14.66%
+	);
+	letter-spacing: 0.28px;
+	margin-bottom: fluid(16px, 24px);
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		padding: 1px;
+		background: linear-gradient(
+			180deg,
+			transparent 0%,
+			rgba(255, 255, 255, 0.5) 30%,
+			white 50%,
+			rgba(255, 255, 255, 0.5) 70%,
+			transparent 100%
+		);
+		mask:
+			linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+		-webkit-mask-composite: xor;
+		clip-path: inset(0 50% 0 0);
+		pointer-events: none;
+	}
+}
+
+.heroDot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.heroBreak {
+	@include tablet {
+		display: none;
+	}
+}
+
+.heroTitle {
+	font-size: $font-size-display;
+	font-weight: $font-weight-bold;
+	line-height: 80px;
+	padding-bottom: 0.08em;
+	letter-spacing: -0.04em;
+	background: #fff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@include tablet {
+		line-height: 50px;
+	}
+
+	@media (max-width: 430px) {
+		line-height: 40px;
+	}
+}
+
+.heroButtons {
+	display: flex;
+	align-items: center;
+	gap: fluid(10px, 15px);
+	margin-top: fluid(24px, 40px);
+
+	@include mobile {
+		flex-direction: column;
+		width: 100%;
+	}
+}
+
+.heroBtnPrimary {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fluid(180px, 279px);
+	padding: fluid(12px, 15px) fluid(32px, 75px);
+	background: $color-primary;
+	border-radius: fluid(30px, 60px);
+	font-size: $font-size-lg;
+	font-weight: $font-weight-regular;
+	letter-spacing: 0em;
+	transition: background 0.4s ease;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	&:hover {
+		background: linear-gradient(
+			180deg,
+			rgba(75, 75, 75, 0.12) 0%,
+			rgba(0, 0, 0, 0.12) 47.5%,
+			rgba(75, 75, 75, 0.12) 95%
+		);
+	}
+}
+
+.heroBtnGlass {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fluid(180px, 279px);
+	padding: fluid(12px, 15px) fluid(32px, 75px);
+	background: #292929;
+	border-radius: fluid(30px, 60px);
+	font-size: $font-size-lg;
+	font-weight: $font-weight-regular;
+	position: relative;
+	transition: background 0.4s ease;
+
+	@include mobile {
+		width: 100%;
+	}
+
+	&:hover {
+		background: $color-primary;
+
+		&::before {
+			animation: borderPulse 4s ease-in-out infinite;
+		}
+	}
+}
+
+@keyframes borderPulse {
+	0%,
+	100% {
+		opacity: 0.7;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+.section {
+	margin-top: $spacing-3xl;
+	background: $color-bg-section;
+	border-radius: $radius-2xl;
+	padding: fluid(20px, 50px);
+}
+
+.sectionFaq {
+	margin-top: $spacing-3xl;
+}
+
+.sectionTitle {
+	@include section-title;
+	margin-bottom: $spacing-xl;
+
+	em {
+		font-style: normal;
+	}
+}
+
+.advantages {
+	background: $color-bg-section;
+	border-radius: $radius-2xl;
+	padding: fluid(20px, 40px);
+	margin-top: $spacing-3xl;
+}
+
+.advTopRow {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 1fr;
+	gap: fluid(15px, 30px);
+	margin-top: $spacing-xl;
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
+
+.advBottomRow {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: 1fr;
+	gap: fluid(15px, 30px);
+	margin-top: fluid(15px, 30px);
+
+	@media (max-width: 1240px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
+
+.advCard {
+	background: $color-bg-card-dark;
+	border-radius: $radius-2xl;
+	padding: fluid(10px, 15px);
+	gap: fluid(10px, 20px);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.advTopRow .advCard {
+	@include tablet {
+		flex-direction: column-reverse;
+	}
+}
+
+.advText {
+	font-size: fluid(15px, 23px);
+	font-weight: $font-weight-regular;
+	line-height: 1.09;
+
+	strong {
+		color: $color-text;
+	}
+
+	span {
+		color: $color-text-dimmed;
+	}
+}
+
+.advTag {
+	background: #303030;
+	border-radius: fluid(5px, 10px);
+	height: fluid(20px, 30px);
+	padding: 0 fluid(4px, 13px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: fluid(8px, 13px);
+	color: $color-text;
+	white-space: nowrap;
+}
+
+.advTagActive {
+	background: rgba(0, 140, 255, 0.9);
+	border-radius: fluid(5px, 10px);
+	height: fluid(20px, 30px);
+	padding: 0 fluid(4px, 13px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: fluid(8px, 13px);
+	color: $color-text;
+	white-space: nowrap;
+}
+
+.advTagsVertical {
+	position: absolute;
+	top: fluid(10px, 20px);
+	left: fluid(10px, 20px);
+	display: flex;
+	flex-direction: column;
+	gap: fluid(4px, 10px);
+	z-index: 1;
+}
+
+.advTagsHorizontal {
+	position: absolute;
+	top: 18px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: fluid(4px, 10px);
+	z-index: 1;
+}
+
+.advTagsBottomLeft {
+	position: absolute;
+	bottom: fluid(10px, 20px);
+	left: fluid(10px, 20px);
+	display: flex;
+	gap: fluid(4px, 10px);
+	z-index: 1;
+}
+
+.advImageWrapper {
+	position: relative;
+	width: 100%;
+	border-radius: $radius-lg;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.advImage {
+	border-radius: $radius-lg;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.advImageTag {
+	position: absolute;
+	top: fluid(12px, 20px);
+	left: fluid(12px, 20px);
+	z-index: 1;
+}
+
+.servicesGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: $spacing-lg;
+
+	@include desktop {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include tablet {
+		grid-template-columns: 1fr;
+	}
+}
