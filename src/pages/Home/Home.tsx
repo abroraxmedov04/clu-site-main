@@ -6,16 +6,11 @@ import heroBg from '@/assets/images/home/hero-bg.svg'
 import cardTrial from '@/assets/images/shared/card-trial.png'
 import cardDaily from '@/assets/images/shared/card-daily.png'
 import cardRouter from '@/assets/images/shared/card-router.png'
-import advDevices from '@/assets/images/home/adv-devices.png'
-import advDevicesMobile from '@/assets/images/home/adv-devices-mobile.png'
-import advBrowser from '@/assets/images/home/adv-browser.png'
-import advBrowserMobile from '@/assets/images/home/adv-browser-mobile.png'
-import advCalendar from '@/assets/images/home/adv-calendar.png'
-import advCalendarMobile from '@/assets/images/home/adv-calendar-mobile.png'
-import advGlobe from '@/assets/images/home/adv-globe.png'
-import advGlobeMobile from '@/assets/images/home/adv-globe-mobile.png'
-import advNoads from '@/assets/images/home/adv-noads.png'
-import advNoadsMobile from '@/assets/images/home/adv-noads-mobile.png'
+import advDevices from '@/assets/images/home/devices.svg'
+import advBrowser from '@/assets/images/home/advbrowser.svg'
+import advCalendar from '@/assets/images/home/adv-calendar.svg'
+import advGlobe from '@/assets/images/home/adv-globe.svg'
+import advNoads from '@/assets/images/home/adv-noads.svg'
 import styles from './Home.module.scss'
 
 function Home() {
@@ -89,18 +84,7 @@ function Home() {
 								</span>
 							</p>
 							<div className={styles.advImageWrapper}>
-								<div className={styles.advTagsVertical}>
-									<span className={styles.advTagActive}>Все устройства</span>
-									<span className={styles.advTag}>Без ограничений</span>
-									<span className={styles.advTag}>Высокая скорость</span>
-								</div>
-								<picture>
-									<source
-										media='(max-width: 430px)'
-										srcSet={advDevicesMobile}
-									/>
-									<img src={advDevices} alt='' className={styles.advImage} />
-								</picture>
+								<img src={advDevices} alt='' className={styles.advImage} />
 							</div>
 						</div>
 					</Animate>
@@ -114,18 +98,7 @@ function Home() {
 								</span>
 							</p>
 							<div className={styles.advImageWrapper}>
-								<div className={styles.advTagsHorizontal}>
-									<span className={styles.advTag}>Только для блокировок</span>
-									<span className={styles.advTagActive}>Умный режим</span>
-									<span className={styles.advTag}>Автоподключение</span>
-								</div>
-								<picture>
-									<source
-										media='(max-width: 430px)'
-										srcSet={advBrowserMobile}
-									/>
-									<img src={advBrowser} alt='' className={styles.advImage} />
-								</picture>
+								<img src={advBrowser} alt='' className={styles.advImage} />
 							</div>
 						</div>
 					</Animate>
@@ -134,13 +107,7 @@ function Home() {
 					<div className={styles.advBottomRow}>
 						<div className={styles.advCard}>
 							<div className={styles.advImageWrapper}>
-								<picture>
-									<source
-										media='(max-width: 430px)'
-										srcSet={advCalendarMobile}
-									/>
-									<img src={advCalendar} alt='' className={styles.advImage} />
-								</picture>
+								<img src={advCalendar} alt='' className={styles.advImage} />
 							</div>
 							<p className={styles.advText}>
 								<strong>5 дней бесплатно </strong>
@@ -151,15 +118,7 @@ function Home() {
 						</div>
 						<div className={styles.advCard}>
 							<div className={styles.advImageWrapper}>
-								<div className={styles.advTagsBottomLeft}>
-									<span className={styles.advTag}>Pocсия</span>
-									<span className={styles.advTagActive}>Казахстан</span>
-									<span className={styles.advTag}>Беларусь</span>
-								</div>
-								<picture>
-									<source media='(max-width: 430px)' srcSet={advGlobeMobile} />
-									<img src={advGlobe} alt='' className={styles.advImage} />
-								</picture>
+								<img src={advGlobe} alt='' className={styles.advImage} />
 							</div>
 							<p className={styles.advText}>
 								<strong>доступ за рубежом</strong>
@@ -168,15 +127,7 @@ function Home() {
 						</div>
 						<div className={styles.advCard}>
 							<div className={styles.advImageWrapper}>
-								<span
-									className={`${styles.advImageTag} ${styles.advTagActive}`}
-								>
-									Блокировка рекламы
-								</span>
-								<picture>
-									<source media='(max-width: 430px)' srcSet={advNoadsMobile} />
-									<img src={advNoads} alt='' className={styles.advImage} />
-								</picture>
+								<img src={advNoads} alt='' className={styles.advImage} />
 							</div>
 							<p className={styles.advText}>
 								<strong>блокировка рекламы </strong>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Animate, FAQ, HeroSection, SEO } from '@/components'
-import { useFaq } from '@/hooks/useFaq'
+import { useFaq, useFaqForAccordion } from '@/hooks/useFaq'
 import heroShape from '@/assets/images/shared/hero-shape-questions.png'
 import searchIcon from '@/assets/icons/search.svg'
 import styles from './HelpCenter.module.scss'
@@ -20,11 +20,7 @@ function HelpCenter() {
 	const debouncedSearch = useDebounce(search, 300)
 	const isSearching = debouncedSearch.length > 0
 	const { items, loading } = useFaq(isSearching ? debouncedSearch : undefined)
-
-	const faqItems = items.map(item => ({
-		question: item.question,
-		answer: item.answers.map(a => a.text).join('\n')
-	}))
+	const { faqItems } = useFaqForAccordion()
 
 	return (
 		<div className={styles.page}>

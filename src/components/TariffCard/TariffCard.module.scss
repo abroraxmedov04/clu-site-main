@@ -11,6 +11,8 @@
 .name {
 	font-size: fluid(34px, 62px);
 	font-weight: $font-weight-regular;
+	line-height: 1;
+	letter-spacing: -0.03em;
 	position: relative;
 	z-index: 1;
 }
@@ -19,7 +21,7 @@
 	display: flex;
 	height: fluid(232px, 377px);
 	border-radius: $radius-lg;
-	padding: fluid(15px, 20px);
+	padding: fluid(15px, 20px) fluid(15px, 22px);
 	background: $color-bg-content;
 	flex-direction: column;
 	overflow: hidden;
@@ -33,13 +35,22 @@
 		right: 0;
 		height: fluid(89px, 145px);
 		border-radius: 539px;
-		background: #008cff;
+		background: #b3cdf0;
 		filter: blur(115px);
 		pointer-events: none;
 		opacity: 0;
 		transform: translateY(30px);
 		animation: glowFadeIn 1s ease forwards;
 		animation-delay: 0.3s;
+	}
+
+	@include mobile {
+		&::after {
+			bottom: calc(fluid(140px, 145px) * -1 / 3);
+			height: fluid(140px, 145px);
+			background: #0a4dad;
+			filter: blur(70px);
+		}
 	}
 
 	@keyframes glowFadeIn {
@@ -96,8 +107,9 @@
 
 .description {
 	font-size: fluid(15px, 23px);
-	color: $color-text-secondary;
-	line-height: 1;
+	font-weight: $font-weight-medium;
+	color: $color-text-dimmed;
+	line-height: fluid(15px, 25px);
 	position: relative;
 	z-index: 1;
 
