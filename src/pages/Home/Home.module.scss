@@ -113,6 +113,16 @@
 	}
 }
 
+.heroSubtitle {
+	margin-top: fluid(16px, 24px);
+	max-width: fluid(320px, 620px);
+	font-size: fluid(13px, 16px);
+	font-weight: $font-weight-regular;
+	line-height: 1.4;
+	letter-spacing: -0.01em;
+	color: $color-text-secondary;
+}
+
 .heroButtons {
 	display: flex;
 	align-items: center;

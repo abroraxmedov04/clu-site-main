@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Animate, FAQ, SEO, ServiceCard } from '@/components'
 import { useFaqForAccordion } from '@/hooks/useFaq'
-import heroBg from '@/assets/images/home/hero-bg.svg'
+import heroBg from '@/assets/images/home/hero.svg'
 import cardTrial from '@/assets/images/shared/card-trial.png'
 import cardDaily from '@/assets/images/shared/card-daily.png'
 import cardRouter from '@/assets/images/shared/card-router.png'
@@ -24,14 +24,6 @@ function Home() {
 			/>
 
 			<section className={styles.hero}>
-				<motion.img
-					src={heroBg}
-					alt=''
-					className={styles.heroBg}
-					initial={{ opacity: 0, y: 60 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1.2, ease: 'easeOut' }}
-				/>
 				<div className={styles.heroContent}>
 					<motion.span
 						className={styles.heroLabel}
@@ -51,6 +43,14 @@ function Home() {
 						Быстрый и доступный VPN
 						<br className={styles.heroBreak} /> с выборочной маршрутизацией
 					</motion.h1>
+					<motion.p
+						className={styles.heroSubtitle}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.5 }}
+					>
+						лучший vpn для вашей семьи с безлимитными устройствами и траффиком
+					</motion.p>
 					<motion.div
 						className={styles.heroButtons}
 						initial={{ opacity: 0, y: 20 }}
