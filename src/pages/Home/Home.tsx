@@ -10,6 +10,7 @@ import advBrowser from '@/assets/images/home/advbrowser.svg'
 import advCalendar from '@/assets/images/home/adv-calendar.svg'
 import advGlobe from '@/assets/images/home/adv-globe.svg'
 import advNoads from '@/assets/images/home/adv-noads.svg'
+import services from '@/assets/images/home/services.svg'
 import styles from './Home.module.scss'
 
 function Home() {
@@ -39,8 +40,7 @@ function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.3 }}
 					>
-						Быстрый и доступный VPN
-						<br className={styles.heroBreak} /> с выборочной маршрутизацией
+						Доступный VPN с выборочной маршрутизацией
 					</motion.h1>
 					<motion.p
 						className={styles.heroSubtitle}
@@ -48,7 +48,7 @@ function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.5 }}
 					>
-						лучший vpn для вашей семьи с безлимитными устройствами и траффиком
+						лучший vpn для вашей семьи с безлимитным траффиком
 					</motion.p>
 					<motion.div
 						className={styles.heroButtons}
@@ -64,6 +64,19 @@ function Home() {
 						</Link>
 					</motion.div>
 				</div>
+
+				<motion.div
+					className={styles.heroChips}
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.7, delay: 0.9 }}
+					aria-hidden='true'
+				>
+					<img src={services} alt='' className={`${styles.heroChipImage}`} />
+				</motion.div>
+				<p className={styles.heroCaption}>
+					Лучший VPN для жителей России, который обходит все блокировки
+				</p>
 			</section>
 
 			<section className={styles.advantages} id='advantages'>

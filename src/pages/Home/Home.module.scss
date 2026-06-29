@@ -4,79 +4,74 @@
 
 .hero {
 	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: calc(100vh - fluid(60px, 80px) - $content-padding);
+	min-height: calc(100vh - 20px - $content-padding);
 	overflow: hidden;
-	border-radius: $radius-2xl;
-	margin-top: fluid(60px, 80px);
+	border-radius: 0 0 $radius-2xl $radius-2xl;
+	margin-top: fluid(20px, 10px);
+	margin-right: calc($content-padding * -1);
+	margin-left: calc($content-padding * -1);
+	padding: fluid(70px, 150px) fluid(26px, 80px) fluid(30px, 55px);
+	background: #000;
+
+	background-image: url('../../assets/images/home/background-gradient.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include tablet {
+		min-height: 780px;
+		padding: 82px fluid(24px, 46px) 34px;
+	}
 
 	@include mobile {
-		align-items: flex-start;
-		padding-top: 100px;
+		min-height: 840px;
+		padding: 104px 28px 34px;
 	}
-}
-
-.heroBg {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	z-index: 0;
 }
 
 .heroContent {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding: $spacing-xl;
-	margin-top: -15%;
+	align-items: flex-start;
+
+	@include tablet {
+		align-items: center;
+		text-align: center;
+		max-width: 100%;
+	}
 }
 
 .heroLabel {
-	display: inline-flex;
+	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 10px;
+	width: 205px;
+	height: 29px;
 	font-family: $font-family;
-	font-size: 14px;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: $font-weight-regular;
+	line-height: normal;
 	color: #919191;
-	border-radius: $radius-full;
-	padding: fluid(6px, 10px) fluid(14px, 24px);
-	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 0.1) 0%,
-		rgba(153, 153, 153, 0.1) 14.66%
-	);
-	letter-spacing: 0.28px;
-	margin-bottom: fluid(16px, 24px);
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 100px;
+	padding: 10px 24px;
+	background: #101010;
+	letter-spacing: 0.2px;
+	margin-bottom: fluid(34px, 42px);
 	position: relative;
+	white-space: nowrap;
 
-	&::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		border-radius: inherit;
-		padding: 1px;
-		background: linear-gradient(
-			180deg,
-			transparent 0%,
-			rgba(255, 255, 255, 0.5) 30%,
-			white 50%,
-			rgba(255, 255, 255, 0.5) 70%,
-			transparent 100%
-		);
-		mask:
-			linear-gradient(#fff 0 0) content-box,
-			linear-gradient(#fff 0 0);
-		mask-composite: exclude;
-		-webkit-mask-composite: xor;
-		clip-path: inset(0 50% 0 0);
-		pointer-events: none;
+	@media (min-width: 769px) {
+		width: auto;
+		min-width: 205px;
+		max-width: 254px;
+		height: 36px;
+		font-size: 14px;
+		letter-spacing: 0.28px;
 	}
 }
 
@@ -88,46 +83,37 @@
 }
 
 .heroBreak {
-	@include tablet {
-		display: none;
-	}
+	display: none;
 }
 
 .heroTitle {
-	font-size: $font-size-display;
+	font-size: fluid(45px, 80px);
 	font-weight: $font-weight-bold;
-	line-height: 80px;
+	line-height: fluid(43px, 80px);
 	padding-bottom: 0.08em;
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 	background: #fff;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-
-	@include tablet {
-		line-height: 50px;
-	}
-
-	@media (max-width: 430px) {
-		line-height: 40px;
-	}
 }
 
 .heroSubtitle {
-	margin-top: fluid(16px, 24px);
-	max-width: fluid(320px, 620px);
-	font-size: fluid(13px, 16px);
+	margin-top: fluid(24px, 36px);
+	max-width: fluid(300px, 500px);
+	font-size: fluid(18px, 29px);
 	font-weight: $font-weight-regular;
-	line-height: 1.4;
-	letter-spacing: -0.01em;
-	color: $color-text-secondary;
+	line-height: 1.15;
+	letter-spacing: 0;
+	color: #bfbfbf;
 }
 
 .heroButtons {
 	display: flex;
 	align-items: center;
-	gap: fluid(10px, 15px);
-	margin-top: fluid(24px, 40px);
+	gap: fluid(14px, 18px);
+	margin-top: fluid(34px, 56px);
+	
 
 	@include mobile {
 		flex-direction: column;
@@ -139,26 +125,27 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: fluid(180px, 279px);
-	padding: fluid(12px, 15px) fluid(32px, 75px);
+	width: fluid(235px, 280px);
+	min-height: fluid(58px, 64px);
+	padding: 0 fluid(32px, 52px);
 	background: $color-primary;
-	border-radius: fluid(30px, 60px);
+	border-radius: 20px;
 	font-size: $font-size-lg;
 	font-weight: $font-weight-regular;
 	letter-spacing: 0em;
-	transition: background 0.4s ease;
+	box-shadow: 0 18px 44px rgba(0, 140, 255, 0.24);
+	transition:
+		background 0.4s ease,
+		transform $transition-fast;
 
 	@include mobile {
 		width: 100%;
+		min-height: 51px;
 	}
 
 	&:hover {
-		background: linear-gradient(
-			180deg,
-			rgba(75, 75, 75, 0.12) 0%,
-			rgba(0, 0, 0, 0.12) 47.5%,
-			rgba(75, 75, 75, 0.12) 95%
-		);
+		background: #1598ff;
+		transform: translateY(-1px);
 	}
 }
 
@@ -166,25 +153,69 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: fluid(180px, 279px);
-	padding: fluid(12px, 15px) fluid(32px, 75px);
-	background: #292929;
-	border-radius: fluid(30px, 60px);
+	width: fluid(235px, 280px);
+	min-height: fluid(58px, 64px);
+	padding: 0 fluid(32px, 52px);
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
 	font-size: $font-size-lg;
 	font-weight: $font-weight-regular;
 	position: relative;
-	transition: background 0.4s ease;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	transition:
+		background 0.4s ease,
+		transform $transition-fast;
 
 	@include mobile {
 		width: 100%;
+		min-height: 51px;
 	}
 
 	&:hover {
-		background: $color-primary;
+		background: rgba(255, 255, 255, 0.16);
+		transform: translateY(-1px);
+	}
+}
 
-		&::before {
-			animation: borderPulse 4s ease-in-out infinite;
-		}
+.heroChips {
+	position: absolute;
+	right: fluid(0px, 80px);
+	bottom: fluid(130px, 155px);
+	padding-inline: 40px;
+	z-index: 1;
+	pointer-events: none;
+
+	@include mobile {
+		padding-inline: 40px;
+	}
+}
+
+.heroChipImage {
+	display: block;
+	width: fluid(400px, 652px);
+	height: auto;
+}
+
+.heroCaption {
+	position: absolute;
+	left: fluid(26px, 80px);
+	bottom: fluid(30px, 55px);
+	z-index: 2;
+	max-width: fluid(320px, 620px);
+	font-size: fluid(16px, 22px);
+	line-height: 1.2;
+	color: rgba(255, 255, 255, 0.58);
+
+	@include tablet {
+		max-width: 370px;
+	}
+
+	@include mobile {
+		left: 28px;
+		right: 28px;
+		bottom: 36px;
+		font-size: 14px;
 	}
 }
 
