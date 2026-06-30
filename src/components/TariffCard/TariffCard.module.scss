@@ -28,29 +28,29 @@
 	overflow: hidden;
 	position: relative;
 
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: calc(fluid(89px, 145px) * -1 / 2);
-		left: 0;
-		right: 0;
-		height: fluid(89px, 145px);
-		border-radius: 539px;
-		background: #b3cdf0;
-		filter: blur(115px);
-		pointer-events: none;
-		opacity: 0;
-		transform: translateY(30px);
-		animation: glowFadeIn 1s ease forwards;
-		animation-delay: 0.3s;
-	}
+	// &::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	bottom: calc(fluid(89px, 145px) * -1 / 2);
+	// 	left: 0;
+	// 	right: 0;
+	// 	height: fluid(89px, 145px);
+	// 	border-radius: 539px;
+	// 	background: #b3cdf0;
+	// 	filter: blur(115px);
+	// 	pointer-events: none;
+	// 	opacity: 0;
+	// 	transform: translateY(30px);
+	// 	animation: glowFadeIn 1s ease forwards;
+	// 	animation-delay: 0.3s;
+	// }
 
-	@keyframes glowFadeIn {
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
+	// @keyframes glowFadeIn {
+	// 	to {
+	// 		opacity: 1;
+	// 		transform: translateY(0);
+	// 	}
+	// }
 }
 
 .priceRow {
