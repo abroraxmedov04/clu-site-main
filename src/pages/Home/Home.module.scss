@@ -43,7 +43,7 @@
 }
 
 .heroLabel {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
@@ -87,7 +87,7 @@
 }
 
 .heroTitle {
-	font-size: fluid(45px, 80px);
+	font-size: fluid(35px, 80px);
 	font-weight: $font-weight-bold;
 	line-height: fluid(43px, 80px);
 	padding-bottom: 0.08em;
@@ -113,7 +113,6 @@
 	align-items: center;
 	gap: fluid(14px, 18px);
 	margin-top: fluid(34px, 56px);
-	
 
 	@include mobile {
 		flex-direction: column;

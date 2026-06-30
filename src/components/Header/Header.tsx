@@ -191,22 +191,8 @@ function Header() {
 	const [dropdownOpen, setDropdownOpen] = useState(false)
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-	const [isScrolled, setIsScrolled] = useState(false)
 	const location = useLocation()
 	const navigate = useNavigate()
-
-	useEffect(() => {
-		const onScroll = () => {
-			setIsScrolled(window.scrollY > 24)
-		}
-
-		onScroll()
-		window.addEventListener('scroll', onScroll, { passive: true })
-
-		return () => {
-			window.removeEventListener('scroll', onScroll)
-		}
-	}, [])
 
 	const scrollToSection = (id: string) => {
 		setMobileMenuOpen(false)
@@ -236,12 +222,20 @@ function Header() {
 	return (
 		<>
 			<motion.header
-				className={clsx(styles.header, isScrolled && styles.headerScrolled)}
+				className={styles.header}
 				initial={{ y: -60, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.5, ease: 'easeOut' }}
 			>
-				<Link to='/' onClick={closeMobile} className={styles.logoLink}>
+				<button
+					className={styles.burger}
+					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+					aria-label='Меню'
+				>
+					<img src={burgerIcon} alt='' />
+				</button>
+
+				<Link to='/' onClick={closeMobile}>
 					<img src={logoSvg} alt='CLU VPN' className={styles.logo} />
 				</Link>
 
@@ -291,14 +285,6 @@ function Header() {
 				<button className={styles.loginBtn}>
 					<span className={styles.loginText}>войти</span>
 					<img src={loginIcon} alt='' className={styles.loginIcon} />
-				</button>
-
-				<button
-					className={styles.burger}
-					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-					aria-label='Меню'
-				>
-					<img src={burgerIcon} alt='' />
 				</button>
 			</motion.header>
 

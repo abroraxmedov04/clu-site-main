@@ -7,47 +7,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: fluid(20px, 32px) fluid(28px, 80px);
-	background: #020202;
-	pointer-events: none;
-	transition:
-		padding $transition-fast,
-		background $transition-fast,
-		box-shadow $transition-fast,
-		backdrop-filter $transition-fast;
-
-	@include tablet {
-		padding: 26px 24px 0;
-	}
-}
-
-.headerScrolled {
-	padding-top: fluid(10px, 14px);
-	padding-bottom: fluid(10px, 14px);
-	backdrop-filter: blur(14px);
-	-webkit-backdrop-filter: blur(14px);
-
-	@include tablet {
-		padding: 12px 24px;
-	}
+	padding: fluid(10px, 14px) $content-padding;
+	@include glass;
 }
 
 .burger {
 	display: none;
-	align-items: center;
-	justify-content: center;
-	width: 36px;
-	height: 28px;
-	pointer-events: auto;
+	flex-direction: column;
 
 	@include tablet {
 		display: flex;
-	}
-
-	img {
-		width: 24px;
-		height: auto;
-		display: block;
 	}
 }
 
@@ -63,34 +32,20 @@
 	background: $color-text;
 }
 
-.logoLink {
-	display: flex;
-	align-items: center;
-	pointer-events: auto;
-}
-
 .logo {
-	width: fluid(78px, 137.5px);
+	width: fluid(100px, 137.5px);
 	height: auto;
 	display: block;
-
-	@include tablet {
-		width: 103px;
-	}
 }
 
 .nav {
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	gap: fluid(46px, 88px);
-	min-width: fluid(430px, 680px);
-	background: rgba(41, 41, 41, 0.94);
-	border-radius: 8px;
-	padding: fluid(10px, 14px) fluid(42px, 60px);
-	pointer-events: auto;
-	box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+	gap: fluid(32px, 88px);
+	background: $color-overlay-subtle;
+	border-radius: $radius-md;
+	padding: 12px 52px;
 
 	@include tablet {
 		display: none;
@@ -98,9 +53,9 @@
 }
 
 .navLink {
-	font-size: fluid(16px, 18px);
+	font-size: $font-size-lg;
 	color: $color-text;
-	line-height: 1;
+	line-height: 22px;
 	white-space: nowrap;
 	transition: color $transition-fast;
 
@@ -127,7 +82,7 @@
 	top: calc(100% + 30px);
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(41, 41, 41, 0.96);
+	background: $color-overlay-subtle;
 	@include glass;
 	border-radius: $radius-md;
 	padding: fluid(10px, 14px) fluid(24px, 40px);
@@ -146,7 +101,7 @@
 }
 
 .dropdownLink {
-	font-size: fluid(10px, 13px);
+	font-size: $font-size-lg;
 	white-space: nowrap;
 	transition: color $transition-fast;
 
@@ -158,35 +113,34 @@
 .loginBtn {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	gap: 12px;
-	min-width: fluid(104px, 139px);
-	min-height: fluid(42px, 50px);
-	background: $color-primary;
-	border-radius: 14px;
-	padding: 0 fluid(17px, 24px);
-	font-size: fluid(16px, 18px);
-	letter-spacing: 0;
+	gap: fluid(8px, 15px);
+	background: #008cff;
+	border-radius: $radius-full;
+	padding: fluid(10px, 13px) fluid(16px, 23px);
+	font-size: $font-size-xl;
+	letter-spacing: -0.04em;
 	white-space: nowrap;
-	pointer-events: auto;
-	box-shadow: 0 12px 28px rgba(0, 140, 255, 0.2);
-	transition:
-		background $transition-fast,
-		transform $transition-fast;
+	transition: background $transition-fast;
 
 	@include tablet {
-		display: none;
+		padding: 8px;
+		background: none;
 	}
 
 	&:hover {
-		background: #1598ff;
-		transform: translateY(-1px);
+		background: rgba(255, 255, 255, 0.12);
+	}
+}
+
+.loginText {
+	@include tablet {
+		display: none;
 	}
 }
 
 .loginIcon {
-	width: fluid(16px, 22px);
-	height: fluid(16px, 22px);
+	width: fluid(18px, 24px);
+	height: fluid(18px, 24px);
 }
 
 .mobileOverlay {
