@@ -4,7 +4,7 @@
 
 .hero {
 	position: relative;
-	min-height: calc(100vh - 20px - $content-padding);
+	min-height: calc(100vh - $content-padding);
 	overflow: hidden;
 	border-radius: 0 0 $radius-2xl $radius-2xl;
 	margin-top: fluid(20px, 10px);

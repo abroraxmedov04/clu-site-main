@@ -30,7 +30,7 @@
 	color: $color-text-muted;
 	text-transform: lowercase;
 	font-style: normal;
-	letter-spacing: -0.03em;
+	letter-spacing: 0;
 }
 
 @mixin fade-in($duration: 0.6s, $delay: 0s) {

@@ -14,7 +14,7 @@
 	font-size: fluid(24px, 60px);
 	font-weight: $font-weight-regular;
 	color: $color-text-dimmed;
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 	line-height: 30px;
 	margin-bottom: $spacing-xl;
 
@@ -87,7 +87,7 @@
 .resultQuestion {
 	font-size: fluid(18px, 30px);
 	font-weight: $font-weight-regular;
-	letter-spacing: -0.04em;
+	letter-spacing: 0;
 	line-height: 1;
 }
 
