@@ -23,7 +23,7 @@
 	border-radius: $radius-lg;
 	padding: fluid(15px, 20px) fluid(15px, 22px);
 	background: url('../../assets/images/daily/tarif-card-bg.svg');
-	background-size: contain;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	flex-direction: column;
