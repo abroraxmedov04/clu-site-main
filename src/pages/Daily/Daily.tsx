@@ -18,6 +18,7 @@ import whyYoutube from '@/assets/images/daily/why-youtube.svg'
 import whyAdblock from '@/assets/images/daily/why-adblock.svg'
 import whyGaming from '@/assets/images/daily/why-gaming.svg'
 import whyGreat from '@/assets/images/daily/why-great.svg'
+import tariffCardBg from '../../assets/images/daily/tarif-card-bg.svg'
 import styles from './Daily.module.scss'
 
 const tariffs = [
@@ -131,7 +132,7 @@ function Daily() {
 				<div className={styles.tariffsGrid}>
 					{tariffs.map((tariff, i) => (
 						<Animate key={tariff.name} delay={i * 0.08}>
-							<TariffCard {...tariff} />
+							<TariffCard {...tariff} backgroundImage={tariffCardBg} />
 						</Animate>
 					))}
 				</div>

@@ -7,6 +7,7 @@ interface TariffCardProps {
 	currency?: string
 	description: string
 	highlight?: string
+	backgroundImage: string
 }
 
 function TariffCard({
@@ -14,11 +15,15 @@ function TariffCard({
 	price,
 	currency = 'руб',
 	description,
-	highlight
+	highlight,
+	backgroundImage
 }: TariffCardProps) {
 	return (
 		<div className={styles.card}>
-			<div className={styles.content}>
+			<div
+				className={styles.content}
+				style={{ backgroundImage: `url("${backgroundImage}")` }}
+			>
 				<h3 className={styles.name}>{name}</h3>
 				<div className={styles.priceRow}>
 					<span className={styles.price}>{price}</span>
