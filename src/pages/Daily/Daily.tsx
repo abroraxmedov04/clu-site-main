@@ -9,7 +9,7 @@ import {
 	WhyUsSlider
 } from '@/components'
 import { useFaqForAccordion } from '@/hooks/useFaq'
-import heroShape from '@/assets/images/shared/hero-shape-wifi.png'
+import heroShape from '@/assets/images/daily/wifi.svg'
 import whySubscription from '@/assets/images/daily/why-subscription.svg'
 import whyTrial from '@/assets/images/daily/why-trial.svg'
 import whySmart from '@/assets/images/daily/why-smart.svg'

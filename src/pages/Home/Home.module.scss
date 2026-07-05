@@ -87,11 +87,11 @@
 }
 
 .heroTitle {
-	font-size: fluid(35px, 80px);
+	font-size: fluid(45px, 80px);
 	font-weight: $font-weight-bold;
 	line-height: fluid(43px, 80px);
+	// letter-spacing: fluid(-1.8px, -3.2px);
 	padding-bottom: 0.08em;
-	letter-spacing: 0;
 	background: #fff;
 	background-clip: text;
 	-webkit-background-clip: text;

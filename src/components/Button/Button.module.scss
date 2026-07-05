@@ -5,6 +5,7 @@
 	gap: $spacing-sm;
 	font-weight: $font-weight-medium;
 	letter-spacing: -0.03em;
+	border: none;
 	transition:
 		background $transition-fast,
 		color $transition-fast;
@@ -42,7 +43,6 @@
 
 .dark {
 	background: #2d2d2d;
-	border: 1px solid #000000;
 	color: $color-text;
 	width: 227px;
 	height: fluid(50px, 59px);
@@ -54,6 +54,5 @@
 
 	&:hover {
 		background: $color-primary;
-		border-color: $color-primary;
 	}
 }
