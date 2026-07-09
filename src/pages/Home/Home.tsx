@@ -120,29 +120,29 @@ function Home() {
 
 					<Animate delay={0.2} className={styles.showOnMobile}>
 						<div className={styles.advCard}>
-							<div className={styles.advImageWrapper}>
-								<img src={advCalendar} alt='' className={styles.advImage} />
-							</div>
 							<p className={styles.advText}>
 								<strong>5 дней бесплатно </strong>
 								<span>
 									для тестирования всех возможностей VPN перед покупкой
 								</span>
 							</p>
+							<div className={styles.advImageWrapper}>
+								<img src={advCalendar} alt='' className={styles.advImage} />
+							</div>
 						</div>
 					</Animate>
 
 					<Animate delay={0.2} className={styles.showOnMobile}>
 						<div className={styles.advCard}>
-							<div className={styles.advImageWrapper}>
-								<img src={advCalendar} alt='' className={styles.advImage} />
-							</div>
 							<p className={styles.advText}>
 								<strong>5 дней бесплатно </strong>
 								<span>
 									для тестирования всех возможностей VPN перед покупкой
 								</span>
 							</p>
+							<div className={styles.advImageWrapper}>
+								<img src={advCalendar} alt='' className={styles.advImage} />
+							</div>
 						</div>
 					</Animate>
 				</div>
