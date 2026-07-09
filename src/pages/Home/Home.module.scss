@@ -292,11 +292,25 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	min-height: 304px;
 }
 
 .advTopRow .advCard {
 	@include tablet {
 		flex-direction: column-reverse;
+	}
+}
+
+.hideOnMobile {
+	@media screen and (min-width: 0) and (max-width: 1200px) {
+		display: none;
+	}
+}
+
+.showOnMobile {
+	display: none;
+	@media screen and (min-width: 0) and (max-width: 1200px) {
+		display: block;
 	}
 }
 

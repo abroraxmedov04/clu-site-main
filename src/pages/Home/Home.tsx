@@ -86,7 +86,7 @@ function Home() {
 					</h2>
 				</Animate>
 				<div className={styles.advTopRow}>
-					<Animate delay={0.1}>
+					<Animate delay={0.1} className={styles.hideOnMobile}>
 						<div className={styles.advCard}>
 							<p className={styles.advText}>
 								<strong>одна подписка - все включено </strong>
@@ -100,7 +100,7 @@ function Home() {
 							</div>
 						</div>
 					</Animate>
-					<Animate delay={0.2}>
+					<Animate delay={0.2} className={styles.hideOnMobile}>
 						<div className={styles.advCard}>
 							<p className={styles.advText}>
 								<strong>умный режим </strong>
@@ -112,6 +112,36 @@ function Home() {
 							<div className={styles.advImageWrapper}>
 								<img src={advBrowser} alt='' className={styles.advImage} />
 							</div>
+						</div>
+					</Animate>
+
+					{/* mobile */}
+
+					<Animate delay={0.2} className={styles.showOnMobile}>
+						<div className={styles.advCard}>
+							<div className={styles.advImageWrapper}>
+								<img src={advCalendar} alt='' className={styles.advImage} />
+							</div>
+							<p className={styles.advText}>
+								<strong>5 дней бесплатно </strong>
+								<span>
+									для тестирования всех возможностей VPN перед покупкой
+								</span>
+							</p>
+						</div>
+					</Animate>
+
+					<Animate delay={0.2} className={styles.showOnMobile}>
+						<div className={styles.advCard}>
+							<div className={styles.advImageWrapper}>
+								<img src={advCalendar} alt='' className={styles.advImage} />
+							</div>
+							<p className={styles.advText}>
+								<strong>5 дней бесплатно </strong>
+								<span>
+									для тестирования всех возможностей VPN перед покупкой
+								</span>
+							</p>
 						</div>
 					</Animate>
 				</div>
