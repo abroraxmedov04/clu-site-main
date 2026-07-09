@@ -18,7 +18,7 @@ import whyYoutube from '@/assets/images/daily/why-youtube.svg'
 import whyAdblock from '@/assets/images/daily/why-adblock.svg'
 import whyGaming from '@/assets/images/daily/why-gaming.svg'
 import whyGreat from '@/assets/images/daily/why-great.svg'
-import tariffCardBg from '../../assets/images/daily/tarif-card-bg.svg'
+import tariffCardBg from '../../assets/images/home/adv-calendar.svg'
 import styles from './Daily.module.scss'
 
 const tariffs = [
