@@ -64,6 +64,7 @@ function Home() {
 						</Link>
 					</motion.div>
 				</div>
+				{/* TODO: add SVG mobile option later */}
 
 				<motion.div
 					className={styles.heroChips}
