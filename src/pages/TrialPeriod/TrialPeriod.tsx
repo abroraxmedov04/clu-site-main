@@ -8,10 +8,10 @@ import {
 	ServiceCard
 } from '@/components'
 import { useFaqForAccordion } from '@/hooks/useFaq'
-import heroShape from '@/assets/images/shared/hero-shape-smiley.png'
-import cardTrial from '@/assets/images/shared/card-trial.png'
-import cardDaily from '@/assets/images/shared/card-daily.png'
-import cardRouter from '@/assets/images/shared/card-router.png'
+import heroShape from '@/assets/images/shared/hero-shape-smiley.svg'
+import cardTrial from '@/assets/images/shared/card-trial.svg'
+import cardDaily from '@/assets/images/shared/card-daily.svg'
+import cardRouter from '@/assets/images/shared/card-router.svg'
 import styles from './TrialPeriod.module.scss'
 
 function TrialPeriod() {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Animate, FAQ, HeroSection, SEO } from '@/components'
 import { useFaq, useFaqForAccordion } from '@/hooks/useFaq'
-import heroShape from '@/assets/images/shared/hero-shape-questions.png'
+import heroShape from '@/assets/images/shared/hero-shape-questions.svg'
 import searchIcon from '@/assets/icons/search.svg'
 import styles from './HelpCenter.module.scss'
 
