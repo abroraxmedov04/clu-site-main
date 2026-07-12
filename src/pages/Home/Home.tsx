@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import { motion } from 'framer-motion'
 import { Animate, FAQ, SEO, ServiceCard } from '@/components'
 import { useFaqForAccordion } from '@/hooks/useFaq'
@@ -56,10 +56,10 @@ function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.7 }}
 					>
-						<Link to='/#trial' className={styles.heroBtnPrimary}>
+						<Link smooth to='#services' className={styles.heroBtnPrimary}>
 							подключиться
 						</Link>
-						<Link to='/#advantages' className={styles.heroBtnGlass}>
+						<Link smooth to='#advantages' className={styles.heroBtnGlass}>
 							преимущества
 						</Link>
 					</motion.div>
@@ -82,9 +82,7 @@ function Home() {
 
 			<section className={styles.advantages} id='advantages'>
 				<Animate>
-					<h2 className={styles.sectionTitle}>
-						наши <em>преимущества</em>
-					</h2>
+					<h2 className={styles.sectionTitle}>преимущества</h2>
 				</Animate>
 				<div className={styles.advTopRow}>
 					<Animate delay={0.1} className={styles.hideOnMobile}>
