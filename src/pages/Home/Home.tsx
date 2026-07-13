@@ -8,6 +8,9 @@ import cardRouter from '@/assets/images/shared/card-router.svg'
 import advDevices from '@/assets/images/home/devices.svg'
 import advBrowser from '@/assets/images/home/advbrowser.svg'
 import advCalendar from '@/assets/images/home/adv-calendar.svg'
+import devicesMobile from '@/assets/images/home/devices-mobile.svg'
+import advBrowserMobile from '@/assets/images/home/advbrowser-mobile.svg'
+
 import advGlobe from '@/assets/images/home/adv-globe.svg'
 import advNoads from '@/assets/images/home/adv-noads.svg'
 import services from '@/assets/images/home/services.svg'
@@ -85,61 +88,68 @@ function Home() {
 					<h2 className={styles.sectionTitle}>преимущества</h2>
 				</Animate>
 				<div className={styles.advTopRow}>
-					<Animate delay={0.1} className={styles.hideOnMobile}>
+					<Animate delay={0.1}>
 						<div className={styles.advCard}>
 							<p className={styles.advText}>
-								<strong>одна подписка - все включено </strong>
-								<span>
+								{/* Desktop Text */}
+								<strong className={styles.hideOnMobile}>
+									одна подписка - все включено{' '}
+								</strong>
+								<span className={styles.hideOnMobile}>
 									подключай сколько угодно устройств и пользуйся безлимитным
 									трафиком
 								</span>
+
+								{/* Mobile Text */}
+								<strong className={styles.showOnMobile}>
+									5 дней бесплатно{' '}
+								</strong>
+								<span className={styles.showOnMobile}>
+									для тестирования всех возможностей VPN перед покупкой
+								</span>
 							</p>
+
 							<div className={styles.advImageWrapper}>
-								<img src={advDevices} alt='' className={styles.advImage} />
+								<picture>
+									<source srcSet={advDevices} media='(min-width: 768px)' />
+									<img
+										src={devicesMobile}
+										alt='Advantages'
+										className={styles.advImage}
+									/>
+								</picture>
 							</div>
 						</div>
 					</Animate>
-					<Animate delay={0.2} className={styles.hideOnMobile}>
+
+					<Animate delay={0.2}>
 						<div className={styles.advCard}>
 							<p className={styles.advText}>
-								<strong>умный режим </strong>
-								<span>
+								{/* Desktop Text */}
+								<strong className={styles.hideOnMobile}>умный режим </strong>
+								<span className={styles.hideOnMobile}>
 									включается только для заблокированных сервисов, блокируя
 									назойливую рекламу и трекеры
 								</span>
-							</p>
-							<div className={styles.advImageWrapper}>
-								<img src={advBrowser} alt='' className={styles.advImage} />
-							</div>
-						</div>
-					</Animate>
 
-					{/* mobile */}
-
-					<Animate delay={0.2} className={styles.showOnMobile}>
-						<div className={styles.advCard}>
-							<p className={styles.advText}>
-								<strong>5 дней бесплатно </strong>
-								<span>
+								{/* Mobile Text */}
+								<strong className={styles.showOnMobile}>
+									5 дней бесплатно{' '}
+								</strong>
+								<span className={styles.showOnMobile}>
 									для тестирования всех возможностей VPN перед покупкой
 								</span>
 							</p>
-							<div className={styles.advImageWrapper}>
-								<img src={advCalendar} alt='' className={styles.advImage} />
-							</div>
-						</div>
-					</Animate>
 
-					<Animate delay={0.2} className={styles.showOnMobile}>
-						<div className={styles.advCard}>
-							<p className={styles.advText}>
-								<strong>5 дней бесплатно </strong>
-								<span>
-									для тестирования всех возможностей VPN перед покупкой
-								</span>
-							</p>
 							<div className={styles.advImageWrapper}>
-								<img src={advCalendar} alt='' className={styles.advImage} />
+								<picture>
+									<source srcSet={advBrowser} media='(min-width: 768px)' />
+									<img
+										src={advBrowserMobile}
+										alt='Advantages'
+										className={styles.advImage}
+									/>
+								</picture>
 							</div>
 						</div>
 					</Animate>
